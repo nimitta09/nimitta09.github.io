@@ -12,11 +12,11 @@ div.container-fluid{
     align-items: center;
 }
 
-.row:nth-child(odd) > .col-md-4  {
+div#content-container > .row:nth-child(odd) > .col-md-4  {
     justify-content: end;
 }
 
-.row:nth-child(even) > .col-md-4 {
+div#content-container > .row:nth-child(even) > .col-md-4 {
     justify-content: start;
 }
 
@@ -36,12 +36,67 @@ div.container-fluid{
     color: orange;
 }
 
-h3,h4{
+h3,h4,h5{
     color: orange;
 }
 
 em{
     color: orange;
+}
+
+#popup-div{
+    position:fixed;
+    z-index: 25;
+    visibility:hidden;
+    display:none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(240,240,240,0.8);
+    transition: visibility 2s;
+}
+
+.popup-box{
+    background-color: white;
+    border :1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.div_visibility_class_start{
+    animation: animated_tld_start 1s;
+}
+
+.div_visibility_class_remove{
+    animation: animated_tld_end 1s;
+}
+
+
+@keyframes animated_tld_start{
+    from {opacity: 0;}
+    to {opacity: 0.9;}
+}
+
+@keyframes animated_tld_end{
+    from {opacity: 0.9;}
+    to {opacity: 0;}
+}
+
+.detail-list-li {
+    list-style-type: none;
+}
+
+tr > td:nth-child(odd){
+    color: orange;
+}
+
+.people-div{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.people-div > div {
+    align-self: start;
 }
 
 /* body{ */

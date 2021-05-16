@@ -17,15 +17,60 @@
 </head>
 
 <body>
+	<script>
+		function onClickAlert(textHeading, textBody) {
+			var popupDiv = document.getElementById("popup-div")
+			var popupStyle = getComputedStyle(popupDiv)
+
+			if (popupStyle.visibility === "hidden") {
+				popupDiv.style.display = "block"
+				popupDiv.style.visibility = "visible";
+				document.getElementById("popup-heading").innerHTML = textHeading
+				document.getElementById("popup-body").innerHTML = textBody
+				popupDiv.classList.remove("div_visibility_class_remove")
+				popupDiv.classList.add("div_visibility_class_start")
+			} else {
+				onClickClose()
+			}
+		}
+
+		function onClickClose() {
+			document.getElementById("popup-div").classList.remove("div_visibility_class_start")
+			document.getElementById("popup-div").classList.add("div_visibility_class_remove")
+			window.setTimeout(function () {
+				document.getElementById("popup-div").style.visibility = "hidden"
+				document.getElementById("popup-div").style.display = "none"
+			}, 1000)
+		}
+	</script>
 	<div class="bg-img">
 
+	</div>
+	<div class="container-fluid" id="popup-div" onclick="onClickClose()">
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<div class="popup-box">
+					<button class="close" onclick="onClickClose()">
+						×
+					</button>
+					<h4 id="popup-heading">
+						Alert!
+					</h4>
+					<p id="popup-body"></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+			</div>
+		</div>
 	</div>
 	<div class="container heading-container heading-text">
 		<h3 class="text-center push-text-down">
 			Nimitta : एक संकल्प
 		</h3>
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid" id="content-container">
 		<div class="row">
 			<div class="col-md-12">
 
@@ -90,27 +135,35 @@
 				<h3>
 					Nimitta : About our name
 				</h3>
-				<h4>
-					निमित्त : हमारे नाम के बारे में
-				</h4>
 				<p>
 					Our name NIMITTA (निमित्त), a Hindi word, means the instrument or cause or medium, underlines our
-					philosophy, vision and strategy. NIMITTA is strong both in advocacy and action fronts. We have
-					worked in the field of providing social and legal status to the married couples, a first of its kind
-					all over India, also in the areas of health, sanitation, education and livelihoods in Jharkhand,
-					India.
+					philosophy, vision and strategy.</p>
+				<p> NIMITTA is strong both in advocacy and action fronts. We have worked in the field of providing
+					social and legal status to the married couples, a first of its kind all over India, also in the
+					areas of health, sanitation, education and livelihoods in Jharkhand, India.
 				</p>
+				<!-- <p>
+					<a class="btn" onclick="onClickAlert('TestHeading','Test body')">View details »</a>
+				</p> -->
+			</div>
+
+			<div class="col-md-4">
+				<h3>
+					Nimitta : Our Vision
+				</h3>
 				<p>
-					<a class="btn" href="#">View details »</a>
+					Our vision is to work towards a society where every person is able to realize his/her optimum
+					potential and participates and contributes to the development of his/her community, state, nation
+					and the world while staying rooted in its own milieu and culture.
 				</p>
+				<!-- <p>
+					<a class="btn" onclick="onClickAlert('TestHeading 3','Test body 3')">View details »</a>
+				</p> -->
 			</div>
 			<div class="col-md-4">
 				<h3>
 					Nimitta : Our Mission
 				</h3>
-				<h4>
-					निमित्त : हमारे मकसद
-				</h4>
 				<p>
 					Our goal is to bring forth people from diverse sections of society for common human interest
 					developmental goals. Ulitmately, we strive for all round sustainable development of society focusing
@@ -119,25 +172,9 @@
 					institution building, infrastructural development, environment & ecology improvement and other
 					allied approaches.
 				</p>
-				<p>
-					<a class="btn" href="#">View details »</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<h3>
-					Nimitta : Our Vision
-				</h3>
-				<h4>
-					निमित्त : हमारे सोंच
-				</h4>
-				<p>
-					Our vision is to work towards a society where every person is able to realize his/her optimum
-					potential and participates and contributes to the development of his/her community, state, nation
-					and the world while staying rooted in its own milieu and culture.
-				</p>
-				<p>
-					<a class="btn" href="#">View details »</a>
-				</p>
+				<!-- <p>
+					<a class="btn" onclick="onClickAlert('TestHeading 2','Test body 2')">View details »</a>
+				</p> -->
 			</div>
 		</div>
 		<div class="row">
@@ -199,6 +236,101 @@
 					Committee, Jharkhand and Jharkhand Swimming Association in bringing out different documents and
 					communication materials.
 				</p>
+			</div>
+		</div>
+		<div class="row" style="min-height:100px">
+			<div class="col-md-3">
+				<h5>
+					Contact Us
+				</h5>
+				<ul>
+					<li class="detail-list-li">
+						Email : <a href="mailto:nimitta09@gmail.com">nimitta09@gmail.com</a>
+					</li>
+					<li class="detail-list-li">
+						Phone : <a href="tel:9470359192">Dr. Nikita Sinha</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-3">
+				<h5>
+					For the Press
+				</h5>
+			</div>
+			<div class="col-md-3">
+				<h5>
+					Our Team
+				</h5>
+				<ol>
+					<table>
+						<div class="people-div">
+							<div>
+								President
+							</div>
+							<div>
+								Mr. Jawahar Mani Mishra,
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Secretary
+							</div>
+							<div>
+								Dr. Nikita Sinha
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Treasurer
+							</div>
+							<div>
+								Mr. Randhir Kumar
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Member
+							</div>
+							<div>
+								Mr. Ajay Sinha
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Member
+							</div>
+							<div>
+								Dr. Madhu Singh
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Member
+							</div>
+							<div>
+								Mr. Manas K. Satpathy
+							</div>
+						</div>
+						<div class="people-div">
+							<div>
+								Member
+							</div>
+							<div>
+								Mr. Ajit Prasad
+							</div>
+						</div>
+					</table>
+				</ol>
+			</div>
+			<div class="col-md-3">
+				<h5>
+					Come meet us !
+				</h5>
+				<div>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14644.80757153762!2d85.347673!3d23.417073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e6ae56736f27%3A0x7cddaa712ba17fda!2sBank%20Colony%20Rd%2C%20Ranchi%2C%20Jharkhand%20834009!5e0!3m2!1sen!2sin!4v1621162194248!5m2!1sen!2sin"
+						width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
 			</div>
 		</div>
 	</div>
