@@ -95,6 +95,9 @@ em{
 .carousel-item > img{
     min-height: 55vh;
     max-height: 70vh;
+    max-width: none;
+    min-width: 100%;
+    object-fit: cover;
 }
 
 body{
