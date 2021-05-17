@@ -1,24 +1,38 @@
+:root{
+    --primary-color: rgb(240,248,255);
+    --secondary-color: #B4C9E4;
+}
+
 div.container-fluid{
     display: grid;
-    row-gap: 100px;
+    /* row-gap: 100px; */
 }
 
-.carousel-item > img {
-    /* filter: blur(8px) */
-}
-
-.row > .col-md-4 {
+/* .row > .col-md-7 {
     display : grid;
     align-items: center;
-}
+} */
 
 .image-start  {
+    display: flex;
     justify-content: start;
 }
 
 .image-end {
+    display: flex;
     justify-content: end;
 }
+
+.image-end > img{
+    min-width: 90%;
+    box-shadow: 20px 20px var(--secondary-color);
+}
+
+.image-start > img{
+    min-width: 90%;
+    box-shadow: 20px 20px var(--secondary-color);
+}
+
 
 .push-text-down{
     margin-top:7.5%;
@@ -30,15 +44,15 @@ div.container-fluid{
     display: grid;
     justify-items: center;
     z-index: 2;
-    color: orange;
+    color: rgb(223,117,0);
 }
 
 h3,h4,h5{
-    color: orange;
+    color: rgb(223,117,0);
 }
 
 em{
-    color: orange;
+    color: rgb(223,117,0);
 }
 
 #popup-div{
@@ -66,6 +80,13 @@ em{
 
 .div_visibility_class_remove{
     animation: animated_tld_end 1s;
+}
+
+.ima > img{
+    min-width: 80%;
+    max-width: none;
+    object-fit: cover;
+    height: 90%;
 }
 
 
@@ -109,6 +130,11 @@ hr{
     color: silver;
 }
 
+.works-field{
+    /* border: 50px solid rgb(223,117,0); */
+    background-color: var(--primary-color);
+}
+
 @media (orientation:landscape) {
     
 
@@ -126,10 +152,10 @@ hr{
         display: grid !important;
     }
     
-    .works-field > .col-md-4{
+    .works-field > .col-md-7{
         grid-area: image;
     }
-    .works-field > .col-md-8{
+    .works-field > .col-md-5{
         grid-area: text;
     }
 
@@ -138,33 +164,13 @@ hr{
                              "image";
     }
 
-    div#content-container > .works-field > .col-md-4  {
+    div#content-container > .works-field > .col-md-7  {
         justify-content: center;
     }
     
 }
 
-/* div.row {
-    padding-bottom: 100px; 
-    border-bottom: 1px solid silver;
-  } */
-/* body{ */
-    /* background-image: linear-gradient(45deg,rgb(255,175,21),rgb(255,185,47),rgb(255,195,73),rgb(255,205,99),rgb(255,215,125),rgb(255,225,151),rgb(255,235,176),rgb(255,245,202),rgb(255,255,228)); */
-    /* filter: blur(3px) */
-/* } */
-
-/* .bg-img{
-  background-image: linear-gradient(45deg,rgb(255,175,21),rgb(255,185,47),rgb(255,195,73),rgb(255,205,99),rgb(255,215,125),rgb(255,225,151),rgb(255,235,176),rgb(255,245,202),rgb(255,255,228));
-  position: fixed
-  width: 100vw
-  height: 100vh
-
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  
-  height: 100%; 
-  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.row{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
