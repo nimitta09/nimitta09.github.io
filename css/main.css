@@ -4,7 +4,7 @@ div.container-fluid{
 }
 
 .carousel-item > img {
-    filter: blur(8px)
+    /* filter: blur(8px) */
 }
 
 .row > .col-md-4 {
@@ -97,6 +97,7 @@ em{
 
 .carousel-item > img{
     min-height: 40vh;
+    max-height: 40vh;
 }
 
 body{
