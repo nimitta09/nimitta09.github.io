@@ -21,8 +21,7 @@ div.container-fluid{
 }
 
 .push-text-down{
-    margin-top:10%;
-    position:absolute;
+    margin-top:7.5%;
 }
 
 .heading-container{
@@ -31,8 +30,6 @@ div.container-fluid{
     display: grid;
     justify-items: center;
     z-index: 2;
-}
-.heading-text{
     color: orange;
 }
 
@@ -96,7 +93,7 @@ em{
 }
 
 .carousel-item > img{
-    min-height: 47.5vh;
+    min-height: 55vh;
     max-height: 70vh;
 }
 
